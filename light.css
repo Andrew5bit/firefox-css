@@ -1,0 +1,160 @@
+@media (prefers-color-scheme: light) {
+
+:root {
+    --tab-line-color: #448FC9 !important; /* F2F2F2 */
+    --lwt-accent-color: #F9F9FA !important;
+    --menuitem-hover-background-color: #E4E4ED !important;
+    --toolbarbutton-hover-background: #E4E4ED !important;
+}
+
+
+
+:root[tabsintitlebar]:not(:-moz-window-inactive):not(:-moz-lwtheme), :root[tabsintitlebar]:not(:-moz-window-inactive)[lwt-default-theme-in-dark-mode], #TabsToolbar {
+    background-color: #cccccc !important; /* C7C7C7 757575 */
+    /*background-color: #bba7d8 !important; /* tor */
+}
+/* Make 'new tab' and minimize buttons dark */
+.toolbarbutton-animatable-box, .toolbarbutton-1 {
+    color: black !important;
+}
+.titlebar-button {
+    stroke: black !important;
+}
+
+/* color of circle around the back button */
+#back-button > .toolbarbutton-icon {
+    background-color: #FBFBFB !important;
+    border: 1px solid hsla(240,5%,5%,.3) !important;
+}
+#back-button:not([disabled="true"]) > .toolbarbutton-icon {
+    background-color: #FEFEFE !important;
+    border: 1px solid hsla(240,5%,5%,.3) !important;
+}
+#back-button:not([disabled="true"]):hover > .toolbarbutton-icon {
+    /*box-shadow: #B8DFFF 0px 0px 4px !important;*/
+    box-shadow: 0px 0px 5px hsla(0,0%,0%,.1) !important;
+    border-color: hsla(240,5%,5%,.35) !important;
+}
+
+
+.browser-toolbar:not(.titlebar-color) {
+    background-color: #F9F9FA !important; /* F7F7F7 or F2F2F2. Default is F9F9FA or var(--toolbar-bgcolor) */
+}
+
+/* -= URLbar =- */
+#urlbar:not([focused="true"], [open]) > #urlbar-background, #searchbar:not(:focus-within) {
+    background-color: white !important;
+    border: 1px solid hsla(240,5%,5%,.25) !important;
+}
+#urlbar:is([focused="true"], [open]) > #urlbar-background {
+    border: 1px solid #B7CBEC !important;
+}
+#urlbar:hover {
+    box-shadow: rgba(100,100,100,.1) 0px 0px 3px !important; /* from photon */
+    /*box-shadow: #ebebeb 0px 0px 2px !important; /* my */
+}
+
+#star-button[starred] { /*2890E2*/
+    fill: #2890E2 !important;
+}
+
+
+/* -= Tabs =- */
+#tabbrowser-tabs {
+    --tab-loading-fill: #5FAFFF !important;
+}
+.tabbrowser-tab, .tab-background {
+    background-color: #cccccc !important; /* 3C4759 dark blue or 656565 */
+    color: black !important;
+    /*border-top: 1px solid black !important;*/
+}
+.tabbrowser-tab[selected=true] {
+    color: black !important;
+    box-shadow: #8f8f8f 0px 4px 16px !important;
+    /*border-top: 1px solid black !important;*/
+}
+.tab-background[selected=true] {
+    background: #F9F9FA !important; /* F9F9FA - ffx, F2F2F2 - egde */
+    background-color: #F9F9FA !important; /* F9F9FA - ffx, F2F2F2 - egde */
+    border-top: 2px solid var(--tab-line-color) !important;
+}
+.tab-background {
+    border-right: 1px solid #8E8E8E !important;
+}
+
+/* -= Urlbar =- */
+/*about:config -- browser.urlbar.formatting.enabled*/
+/*#urlbar, .searchbar-textbox, #searchbar, .urlbar-textbox-container {
+    color: black !important;
+    opacity: 1 !important;
+}*/
+
+
+
+/* -= Popups =- */
+#confirmation-hint {
+    --arrowpanel-background: #2890E2 !important;
+    --arrowpanel-border-color: #2890E2 !important;
+}
+/*panelview {
+    font-family: "Segoe UI" !important;
+}*/
+
+/* Recolor padlock */
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #identity-icon-labels, .identity-popup-connection-secure {
+    color: #3C9F00 !important; /* 'Secure' text in popup 0DA455 */
+}
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon, #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon, #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
+    fill: #009F04 !important;
+}
+#identity-box[pageproxystate="valid"].verifiedDomain > #identity-icon, #identity-box[pageproxystate="valid"].verifiedIdentity > #identity-icon, #identity-box[pageproxystate="valid"].mixedActiveBlocked > #identity-icon {
+    fill: #009F04 !important;
+}
+#identity-box, #tracking-protection-icon-container {
+    fill: #292929 !important;
+    fill-opacity: 0.9 !important;
+}
+#identity-box[pageproxystate="valid"].mixedDisplayContent > #identity-icon {
+    fill: #009F04 !important; /* parts of this page are not secure #916600 */
+}
+#tracking-protection-icon-box:not([hasException])[active] #tracking-protection-icon-animatable-image {
+	   transform: none !important;
+}
+
+
+/* Light hovers in menus */
+/* moz-appearance allows editing. Also adjusted padding */
+#context-navigation {
+    background: #f2f2f2 !important;
+}
+/*menupopup menu:hover, menuitem:hover, */menu[_moz-menuactive="true"], menuitem[_moz-menuactive="true"] {
+    -moz-appearance: none !important;
+    background-color: #E4E4ED !important; /* CECECE */
+}
+menupopup menu, menuitem {
+    -moz-appearance: none !important;
+    padding: 0.8px 0px 0.8px 7px !important; /*0.7px*/
+    font-family: "Segoe UI" !important;
+}
+menupopup menuseparator {
+    -moz-appearance: none !important;
+    background: #BABABA !important;
+    margin: 3px 0px 3px 0px !important;
+    padding: 0 !important;
+    /*border-top: none !important;*/
+    border-color: transparent !important;
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+

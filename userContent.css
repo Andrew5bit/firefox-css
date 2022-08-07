@@ -1,0 +1,64 @@
+@import 'usercontent_light.css';
+:root {
+    --my-homepage-dark-bg-color: #1B2838 !important;
+    --my-homepage-hover-dark-bg-color: #233244 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+
+@-moz-document url("about:newtab"), url("about:home") {
+	body { background-color: var(--my-homepage-dark-bg-color) !important;} /* #333a42 - grey; #335066 - dark blue, new - 1B2838*/
+    
+	.collapsible-section .section-title span { color: #E1E4E6 !important; fill: #E1E4E6 !important;} /* #D9D9D9 */
+	.collapsible-section.active { background: rgba(0, 0, 0, 0.2) !important;}
+	
+	.collapsible-section.active ~ .top-site-outer { opacity: 1 !important;}
+	/*.collapsible-section .section-top-bar .context-menu-button:hover ~ .collapsible-section .section-body .top-sites-list .top-site-outer { opacity: 1 !important;}*/
+	.section-top-bar .context-menu-button:hover > .top-site-outer { opacity: 1 !important;}
+    
+	.top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {
+		background: var(--my-homepage-hover-dark-bg-color) !important;
+	}
+	.top-site-outer .title span { color: whitesmoke !important;} /* #AFC6E4 */
+	.top-site-outer { opacity: 0.4 !important;}
+	.top-site-outer:hover { opacity: 1 !important;}
+    
+	.top-sites-list:not(.dnd-active) .top-site-outer:-moz-any(.active, :focus, :hover) .tile {
+    box-shadow: inset 0 0 0 1px #4c7d93, 0 0 0 5px #4c7d93 !important;
+    transition: box-shadow 100ms !important;}
+    
+	.card-outer:-moz-any(:hover, :focus, .active):not(.placeholder) {
+    box-shadow: 0 0 0 5px #4c7d93 !important;
+    transition: box-shadow 100ms !important;}
+    
+	.prefs-button button { fill: #b0b0b0 !important;}
+	
+	.SnippetBaseContainer { background-color: #406480 !important; color: #AFC6E4 !important;}
+	.SnippetBaseContainer a { color: whitesmoke !important;}
+	.SnippetBaseContainer a:hover { color: whitesmoke !important;}
+	
+	.compact-cards .card-outer .card-details { background-color: #448FC9 !important; }
+	
+	.card-outer .card-host-name {color: #AFC6E4 !important;}
+	.card-outer .card-title {color: whitesmoke !important;}
+	.search-wrapper input {background: #f2f2f2 var(--newtab-search-icon) 12px center no-repeat !important; padding-inline-start: 56px !important;}
+	.search-inner-wrapper:active input, .search-inner-wrapper:hover input, .search-wrapper input:focus, .search-inner-wrapper input {
+    border: /*1px solid #5587B1*/none !important; /* orange DBA340, blue 5587B1 */
+    box-shadow: none /*#5587B1*/ !important; }
+	.outer-wrapper { min-height: 0vh !important; }
+	.search-wrapper input {
+		color: black !important;
+		/*font-weight: 600 !important;*/
+	}
+}
+
+@-moz-document url("about:privatebrowsing") {
+	html {
+		background: #1B2838 !important; /* 1B2838 (steam) or 333a42 */
+	}
+	html.private {
+		--in-content-page-background: #1B2838 !important /* 1B2838 (steam) or 333a42 */
+	}
+}
+
+}

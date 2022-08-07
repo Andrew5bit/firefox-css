@@ -1,0 +1,224 @@
+/* Win 10 ffs */
+/*
+#appcontent, #tabbrowser-tabpanels {
+    background-color: transparent !important;
+}
+.tabbrowser-tab[selected=true] {
+    background: transparent !important;
+    color: white !important;
+}
+#main-window {
+    background-color: transparent !important;
+    -moz-appearance: -moz-win-glass !important;
+}
+
+*/
+/* Win 10 ffs */
+
+@import 'dark.css';
+@import 'light.css';
+/*@import 'icons.css';*/
+
+/* remove proton */
+:root {
+	  --tab-min-height: 35px !important;
+	  --toolbarbutton-border-radius: 2px !important; /* bookmark bar too*/
+	  --tab-border-radius: 1px !important;
+	  --arrowpanel-menuitem-border-radius: 0px !important;
+	  --arrowpanel-border-radius:0px !important;
+}
+#context-navigation > .menuitem-iconic[_moz-menuactive="true"][disabled="true"] > .menu-iconic-left > .menu-iconic-icon, #context-navigation > .menuitem-iconic[_moz-menuactive="true"]:not([disabled="true"]) > .menu-iconic-left > .menu-iconic-icon, #context-navigation > .menuitem-iconic[_moz-menuactive="true"]:not([disabled="true"]) > .menu-iconic-left > .menu-iconic-icon {
+    background-color: transparent !important;
+}
+
+.tabbrowser-tab {
+    appearance: auto !important;
+	  padding-inline: 0px !important;
+}
+#TabsToolbar:not([brighttext]) #tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected="true"], [multiselected]) > .tab-stack > .tab-background {
+    box-shadow: none !important;
+}
+.tab-background {
+    border-radius: unset !important;
+    margin-block: unset !important;
+}
+
+.tab-background, #searchbar, menupopup, .menupopup-arrowscrollbox { border-radius: 0 !important; }
+#urlbar-background, #urlbar { border-radius: 2 !important; }
+
+.tab-secondary-label {
+    font-size: .6em !important;
+    margin: -0.8em 0 .3em !important;
+}
+
+/* tab height. I need 43px. 34 makes it 43px. WTF firefucks? -- 2.4em is 46px */
+#tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container {
+  height: 34px !important;
+}
+
+/* --- Prevent enlargement */
+#urlbar[breakout-extend] {
+    top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+    left: 0 !important;
+    width: 100% !important;
+}
+
+#urlbar[breakout-extend] #urlbar-input-container {
+    height: var(--urlbar-height) !important;
+    /*padding: 0px !important;*/
+    padding-block: 0px !important;
+    padding-inline: 0px !important;
+}
+.urlbarView-row {
+    padding: 0px 2px 0px 2px;
+}
+/* END Prevent enlargement --- */
+
+/* keeps being a bitch --- */
+#urlbar:not([focused="true"]):hover > #urlbar-background, #searchbar, #searchbar:not(:focus-within):hover, #urlbar-background {
+    box-shadow: none !important;
+}
+#urlbar[focused="true"] > #urlbar-background, #searchbar:focus-within {
+    border: 1px solid hsla(240,5%,5%,.25) !important;
+}
+#urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background, #searchbar:focus-within {
+    outline: none !important;
+}
+#urlbar[breakout][breakout-extend][breakout-extend-animate] > #urlbar-background {
+    animation-duration: 0s !important;
+}
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+    animation-name: none !important;
+    animation-duration: 0s !important;
+    animation-timing-function: none !important;
+}
+
+
+
+/* add animation to tab line in active window */
+.tab-line:not([selected=true]):not([multiselected]) {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+    transition: transform 250ms var(--animation-easing-function), opacity 250ms var(--animation-easing-function) !important;
+}
+#TabsToolbar[brighttext] .tabbrowser-tab:hover > .tab-stack > .tab-background > .tab-line:not([selected=true]):not([multiselected]) {
+    background-color: rgba(0,0,0,.2) !important;
+    opacity: 0.7 !important;
+    transform: none !important;
+}
+
+
+
+/* Justify bookmark bar. How? Not working.
+#PlacesToolbarItems > .bookmark-item {
+    display: flex !important;
+    justify-content: space-around !important;
+}
+*/
+
+
+/* add circle around the back button */
+#back-button > .toolbarbutton-icon {
+    background-origin: padding-box !important;
+    background-clip: padding-box !important;
+    border-radius: 10000px !important;
+    width: 34px !important;
+    height: 34px !important;
+    padding: 8px !important;
+    transition-property: box-shadow !important;
+    transition-duration: 150ms !important;
+}
+#back-button {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-inline-start: 3px !important;
+    padding-inline-end: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    border-radius: 0 10000px 10000px 0 !important;
+}
+
+
+
+:root[tabsintitlebar] .tab-label:-moz-window-inactive {
+    opacity: 1 !important;
+}
+#navigator-toolbox:after { /* border between bookmarks and webpage */
+    border-bottom: none !important;
+}
+#navigator-toolbox { /* border between bookmarks and webpage */
+    border-bottom: 1px solid #72767B !important;
+}
+
+
+#nav-bar {
+    box-shadow: none !important;
+    /*border-top: 1px solid #3F3F3F !important;*/ /* adds a border under tabs. why is this here? */
+}
+
+
+#urlbar, .searchbar-textbox {
+    font-size: 1.05em !important;
+}
+
+@-moz-document url-prefix(chrome://browser/content/pageinfo/pageInfo.xul){
+	#main-window {
+		background-color: #f1f1f1 !important;
+		color: black !important;
+		/*color: whitesmoke !important;*/
+	}
+	textbox {
+		color: black !important;
+		/*background-color: #525252 !important;*/
+	}
+}
+@-moz-document url-prefix(chrome://browser/content/places/bookmarkProperties.xul){
+	.textbox-input, .textbox-textarea {
+    color: #000 !important;
+	}
+}
+
+
+
+/* Statusbar when you hover over a link *//*
+#statuspanel #statuspanel-label {background-color: red !important;}*/
+
+
+/* Desaturate tooldar icons */
+/*
+#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon{ filter: grayscale(0.5) }
+#PersonalToolbar toolbarbutton .toolbarbutton-icon{ filter: grayscale(1) }
+*/
+
+
+/* Tooltips *//*, .tooltip-label*/
+tooltip {
+    -moz-appearance: none !important;
+    /*background-color: #F5F5FA !important;*/
+    background: linear-gradient(#FFFFFF, #E4E5F0) !important;
+    color: black !important;
+    border-color: #767676 !important;
+    box-shadow: 1px 1px 8px black !important;
+}
+.tooltip-label {
+    padding: 0px 5px !important;
+}
+
+
+
+
+/* -= Context menu =- */
+#contentAreaContextMenu > menuitem,
+#placesContext > menuitem,
+#tabContextMenu > menuitem,
+#backForwardMenu > menuitem,
+#blockedPopupOptions > menuitem,
+.textbox-contextmenu > menuitem,
+#toolbar-context-menu > menuitem {
+    padding-left: 32px !important;
+}
+/* right arrow in context menus */
+.menu-right {
+    margin-inline-end: 0.4em !important;
+}
+
